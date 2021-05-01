@@ -1,5 +1,6 @@
 <% layout('./layouts/boilerplate')%>
 
+
     <div class="jumbotron">
         <h1 class="display-6">PC inventory management made easier.</h1>
         <hr class="my-4">
@@ -9,10 +10,11 @@
     <div class="d-flex">
         <img class="img" src="pc1.png" alt="No">
         <div class="container-div">
-            <table class="table">
+            <script src="https://leewannacott.github.io/table-sort-js/table-sort.js"></script>
+            <table class="table table-sort">
                 <thead>
                     <tr>
-                        <th scope="col">Component ID</th>
+                        <th class="order-by-desc" scope="col">Component ID</th>
                         <th scope="col">Component</th>
                         <th scope="col">Brand</th>
                         <th scope="col">No. of Units</th>
@@ -23,9 +25,9 @@
                 <tbody>
                     <% for(let i of myInventory) { %>
                         <tr>
-                            <th scope="row">
+                            <td scope="row">
                                 <%=i.cid%>
-                            </th>
+                            </td>
                             <td>
                                 <%=i.component%>
                             </td>
@@ -39,9 +41,9 @@
                                 <%=i.price%>
                             </td>
                             <td>
-                                <div class="d-flex justify-content-between">
-                                    <button class="btn btn-sm btn-warning ml-5" data-bs-toggle="modal"
-                                        data-bs-target="#editModal<%=i.cid%>" onclick="myFunc()">
+                                <div class="d-flex ">
+                                    <button class="btn btn-sm btn-warning ml-5 mr-2" data-bs-toggle="modal"
+                                        data-bs-target="#editModal<%=i.cid%>">
                                         Edit
                                     </button>
                                     <form action="/inventory/<%=i._id%>?_method=DELETE" method="POST">
@@ -106,15 +108,16 @@
                         <% } %>
                 </tbody>
             </table>
+            <div class="btn-add w-50">
+                <button type="button" class="btn btn-success m-auto" data-bs-toggle="modal" data-bs-target="#newModal">
+                    Add component
+                </button>
+            </div>
 
         </div>
 
     </div>
-    <div class=" w-50 m-auto mb-5">
-        <button type="button" class="btn btn-success m-auto" data-bs-toggle="modal" data-bs-target="#newModal">
-            Add component
-        </button>
-    </div>
+
 
 
     <!-- Edit -->

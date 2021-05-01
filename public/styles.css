@@ -1,12 +1,8 @@
-/* body{
-    background-image: url("./pc1.png");
-    background-repeat: no-repeat ;
-} */
 .img{
-    height: 300%;
+    height: 100%;
     width: 30%;
     position: relative;
-    left:10px;
+    
 }
 
 .container-div {
@@ -17,7 +13,9 @@
 }
 
 .table{
-    width: 50%;
+    /* width: 70%; */
+    margin-top: 0px;
+    margin-left:130px;
     color: white;
     text-align: center;
     background-color: rgba(75,0,130, 0.3);
@@ -44,3 +42,19 @@
     padding-bottom: 20px;
     padding-top: 20px;
 }
+
+.btn-add {
+    margin-left: 170px;
+}
+.btn-danger{
+    margin-right: 2px;
+}
+
+th{
+    color:black;
+}
+
+html, body {
+    height: 100vh;
+}
+
